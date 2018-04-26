@@ -1,0 +1,23 @@
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    server:
+      waitTimeInMsWhenSycnEmpty: 0
+
+#client
+#server:
+#  port: 8071
+#
+#spring:
+#  application:
+#    name: hello-server
+#
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      default-zone: http://localhost:8070
+#    instance:
+#      hostname: localhost
