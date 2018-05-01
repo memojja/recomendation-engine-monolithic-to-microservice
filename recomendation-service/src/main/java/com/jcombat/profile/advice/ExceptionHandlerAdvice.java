@@ -1,8 +1,8 @@
-package com.example.movieservice.movieservice.advice;
+package com.jcombat.profile.advice;
 
 
-import com.example.movieservice.movieservice.exception.ImageNotReadException;
-import com.example.movieservice.movieservice.exception.MovieNotFoundException;
+import com.jcombat.profile.exception.ImageNotReadException;
+import com.jcombat.profile.exception.MovieNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;

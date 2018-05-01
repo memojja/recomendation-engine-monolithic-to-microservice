@@ -1,16 +1,15 @@
 package com.example.movieservice.movieservice.initializer;
 
-import com.example.movieservice.movieservice.movie.exception.ImageNotReadException;
-import com.example.movieservice.movieservice.movie.util.AppConstant;
-import com.example.movieservice.movieservice.movie.util.DatasetConstant;
-import com.example.movieservice.movieservice.movie.util.MovieMapper;
-import com.example.movieservice.movieservice.movie.model.Movie;
-import com.example.movieservice.movieservice.movie.model.Rating;
-import com.example.movieservice.movieservice.movie.model.movie.MovieDTO;
-import com.example.movieservice.movieservice.movie.repository.mongo.MovieRepository;
-import com.example.movieservice.movieservice.movie.repository.mongo.RatingRepository;
-import com.example.movieservice.movieservice.movie.util.RatingMapper;
-import lombok.Data;
+import com.example.movieservice.movieservice.exception.ImageNotReadException;
+import com.example.movieservice.movieservice.util.AppConstant;
+import com.example.movieservice.movieservice.util.DatasetConstant;
+import com.example.movieservice.movieservice.util.MovieMapper;
+import com.example.movieservice.movieservice.model.Movie;
+import com.example.movieservice.movieservice.model.Rating;
+import com.example.movieservice.movieservice.model.movie.MovieDTO;
+import com.example.movieservice.movieservice.repository.mongo.MovieRepository;
+import com.example.movieservice.movieservice.repository.mongo.RatingRepository;
+import com.example.movieservice.movieservice.util.RatingMapper;
 import lombok.extern.log4j.Log4j;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +17,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.http.*;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
-import scala.App;
 
 import java.io.IOException;
 import java.io.InputStream;
