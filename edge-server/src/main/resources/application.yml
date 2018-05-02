@@ -1,0 +1,30 @@
+#    Filters are most commonly used for
+#    -Authentication
+#    -Logging
+#    -Serving static content
+#    -Dynamic routing based on some conditions (A/B testing)
+zuul:
+  prefix: /api
+  routes:
+    test:
+      path: /redirect/**
+      url: http://google.com
+    movie-service:
+      path: /movies/**
+      serviceId: MOVIE-SERVICE4
+      url: http://localhost:2222
+    recomendations-service:
+      path: /recomendations/**
+      url: http://localhost:3333
+      serviceId: RECOMENDATION-SERVICE2
+
+
+eureka:
+  client:
+    serviceUrl:
+        defaultZone: http://localhost:1111/eureka/
+
+spring:
+  application:
+    name: edge-server
+

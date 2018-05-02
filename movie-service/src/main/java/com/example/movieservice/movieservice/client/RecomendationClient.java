@@ -20,16 +20,9 @@ public class RecomendationClient {
 
     @Async
     public List<Movie> getRecomendations(List<Rating> movies){
-
-//        Movie movie = restTemplate.getForObject(AppConstant.recomendationService,Movie.class);
-//        System.out.println("asdasdas"+movie.toString());
-
         HttpEntity request = new HttpEntity<>(movies);
         Movie[] recomendedMovies = restTemplate.postForObject(AppConstant.recomendationService, request, Movie[].class);
-        System.out.println("sadsadsad"+recomendedMovies.toString());
         return Arrays.asList(recomendedMovies);
-//        Movie[] movies= restTemplate.getForObject(AppConstant.recomendationService,Movie[].class);
-//        return  Arrays.asList(movies);
     }
 
 }

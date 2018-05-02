@@ -117,7 +117,6 @@ public class MovieController {
     })
     @PostMapping("/recomendations")
     public List<Movie> handleRatings(@RequestBody List<Rating> ratings) throws ExecutionException, InterruptedException {
-        System.out.println("ZAAA");
         int userId = 1;
         return client.getRecomendations(ratings);
     }

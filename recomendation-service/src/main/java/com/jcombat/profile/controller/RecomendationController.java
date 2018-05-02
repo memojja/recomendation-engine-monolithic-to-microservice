@@ -16,7 +16,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/recomendations")
 @Log4j
 @CrossOrigin("*")
 public class RecomendationController {
@@ -33,7 +33,7 @@ public class RecomendationController {
     @ApiResponses(value = {
             @ApiResponse(code = 404, message = "Please check url")
     })
-    @PostMapping("/recomendations")
+    @PostMapping("/")
     public Future<List<Movie>> handleRatings(@RequestBody List<Rating> ratings) throws ExecutionException, InterruptedException {
        System.out.println("sad");
         int userId = 1;

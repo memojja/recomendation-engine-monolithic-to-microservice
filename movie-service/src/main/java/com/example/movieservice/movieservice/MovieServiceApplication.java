@@ -41,21 +41,21 @@ public class MovieServiceApplication {
 	@Bean
 	@LoadBalanced
 	public RestTemplate restTemplate(){
-		return new RestTemplate();
+		return new RestTemplate(getClientHttpRequestFactory());
 	}
 
-//	private ClientHttpRequestFactory getClientHttpRequestFactory() {
-//		int timeout = 999999999;
-//		RequestConfig config = RequestConfig.custom()
-//				.setConnectTimeout(timeout)
-//				.setConnectionRequestTimeout(timeout)
-//				.setSocketTimeout(timeout)
-//				.build();
-//		CloseableHttpClient client = HttpClientBuilder
-//				.create()
-//				.setDefaultRequestConfig(config)
-//				.build();
-//		return new HttpComponentsClientHttpRequestFactory(client);
-//	}
+	private ClientHttpRequestFactory getClientHttpRequestFactory() {
+		int timeout = 999999999;
+		RequestConfig config = RequestConfig.custom()
+				.setConnectTimeout(timeout)
+				.setConnectionRequestTimeout(timeout)
+				.setSocketTimeout(timeout)
+				.build();
+		CloseableHttpClient client = HttpClientBuilder
+				.create()
+				.setDefaultRequestConfig(config)
+				.build();
+		return new HttpComponentsClientHttpRequestFactory(client);
+	}
 
 }
