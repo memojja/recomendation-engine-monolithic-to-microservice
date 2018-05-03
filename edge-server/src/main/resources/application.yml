@@ -3,6 +3,19 @@
 #    -Logging
 #    -Serving static content
 #    -Dynamic routing based on some conditions (A/B testing)
+
+#zuul:
+#  routes:
+#    get:
+#      path: /get/**
+#      url: http://httpbin.org/get
+#    links:
+#      path: /links/**
+#      url: http://httpbin.org/links
+#    images:
+#      path: /image/**
+#      url: http://httpbin.org/image
+
 zuul:
   prefix: /api
   routes:
@@ -27,4 +40,5 @@ eureka:
 spring:
   application:
     name: edge-server
+
 
