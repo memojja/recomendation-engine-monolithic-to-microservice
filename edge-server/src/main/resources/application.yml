@@ -17,28 +17,48 @@
 #      url: http://httpbin.org/image
 
 zuul:
-  prefix: /api
+#  prefix: /api
   routes:
     test:
       path: /redirect/**
       url: http://google.com
-    movie-service:
-      path: /movies/**
-      serviceId: MOVIE-SERVICE4
-      url: http://localhost:2222
-    recomendations-service:
-      path: /recomendations/**
-      url: http://localhost:3333
-      serviceId: RECOMENDATION-SERVICE2
+#      http://localhost:8765/movie-service10/movies/1
+    movie-service10: /movies/**
+#      path: /movies/**
+#      serviceId: MOVIE-SERVICE4
+#      url: http://localhost:2222
+    recomendations-service: /recomendations/**
+#      path: /recomendations/**
+#      url: http://localhost:3333
+#      serviceId: RECOMENDATION-SERVICE2
+    user-service: /api/user/**
+    auth-server : /auth/**
 
-
+---
 eureka:
   client:
     serviceUrl:
-        defaultZone: http://localhost:1111/eureka/
+        defaultZone: http://localhost:8761/eureka/
 
 spring:
   application:
     name: edge-server
 
+
+---
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    topic:
+      userCreated: USER_CREATED_TOPIC
+---
+oauth:
+  client-secret: trusted-app:secret
+  token-path: /auth/oauth/token
+  refresh-token:
+    max-age: 2592000 # 30 days
+    cookie-name: refresh_token
+  access-token:
+    max-age: 86400 # 1 day
+    cookie-name: access_token
 
